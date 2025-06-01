@@ -1,0 +1,298 @@
+/* src/components/Projects.css */
+
+/* ---------------- Reset + Font ---------------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Lucida Console", Monaco, monospace;
+}
+
+/* ------------- Full‐Viewport Container ------------- */
+.projects-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: #f3f0f3; /* light gray background */
+  overflow: hidden;
+}
+
+/* ------------- Top Purple Bar (“Traffic Lights”) ------------- */
+.proj-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background-color: #6f42c1; /* purple */
+  display: flex;
+  align-items: center;
+  padding-left: 12px;
+}
+
+.circle {
+  width: 12px;
+  height: 12px;
+  background-color: #000;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+
+/* ------------- “my Projects” Title (Left‐side) ------------- */
+.projects-title {
+  position: absolute;
+  top: 56px;
+  left: 40px;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #000;
+  user-select: none;
+}
+
+/* ------------- Small Text Window (Left‐side) ------------- */
+.projects-text-window {
+  position: absolute;
+  top: 96px;
+  left: 40px;
+  width: 220px;
+  height: 200px;
+  background-color: #e2dbf0; /* very light lavender */
+  border: 2px solid #000;
+  box-shadow: 4px 4px 0 #000;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Text Window Title Bar */
+.text-titlebar {
+  height: 28px;
+  background-color: #ffb6c1; /* light pink */
+  border-bottom: 2px solid #000;
+  display: flex;
+  align-items: center;
+  padding-left: 8px;
+  gap: 8px;
+  font-size: 0.85rem;
+  user-select: none;
+}
+
+/* Individual “File Edit View Help” items */
+.text-menu {
+  cursor: default;
+}
+
+/* Text Content Area */
+.text-content {
+  flex: 1;
+  padding: 12px 8px;
+  font-size: 0.9rem;
+  line-height: 1.3;
+}
+
+/* ------------- File Viewer Window (Right‐side) ------------- */
+.file-viewer-window {
+  position: absolute;
+  top: 56px;
+  left: 300px;
+  width: 820px;
+  height: 440px;
+  background-color: #fff;
+  border: 2px solid #000;
+  box-shadow: 4px 4px 0 #000;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Title Bar (Gradient) */
+.file-titlebar {
+  height: 36px;
+  background: linear-gradient(135deg, #6f42c1, #ff6535); /* purple→orange */
+  border-bottom: 2px solid #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 12px;
+  color: #fff;
+  user-select: none;
+}
+
+.file-title {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+/* Window Control Buttons */
+.file-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.control-btn {
+  width: 16px;
+  height: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  cursor: pointer;
+  color: #000;
+  background-color: #fff;
+  border: 1px solid #000;
+}
+
+/* ------------- Toolbar Row ------------- */
+.file-toolbar {
+  height: 36px;
+  background-color: #f3f0f3;
+  border-bottom: 2px solid #000;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  gap: 8px;
+}
+
+.nav-btn,
+.reload-btn {
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.path-select {
+  flex: 1;
+  height: 20px;
+  font-size: 0.85rem;
+  padding-left: 4px;
+  border: 1px solid #000;
+  background-color: #fff;
+  cursor: default;
+}
+
+.search-input {
+  width: 140px;
+  height: 20px;
+  font-size: 0.85rem;
+  padding-left: 6px;
+  border: 1px solid #000;
+}
+
+/* ------------- Main Body (Sidebar + Thumbnails) ------------- */
+.file-body {
+  flex: 1;
+  display: flex;
+  background-color: #fff;
+}
+
+/* Sidebar */
+.file-sidebar {
+  width: 120px;
+  border-right: 2px solid #000;
+  background-color: #f3f0f3;
+  padding-top: 12px;
+}
+
+.file-sidebar ul {
+  list-style: none;
+}
+
+.file-sidebar li {
+  display: flex;
+  align-items: center;
+  padding: 8px 6px;
+  gap: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  user-select: none;
+}
+
+.sidebar-icon {
+  font-size: 1rem;
+}
+
+.sidebar-label {
+  white-space: nowrap;
+}
+
+/* Thumbnails + Instruction Bubble */
+.thumb-container {
+  flex: 1;
+  position: relative;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Grid of 6 thumbnails (3 columns × 2 rows) */
+.thumb-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.thumb-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.thumb-item img {
+  width: 100%;
+  height: auto;
+  border: 1px solid #000;
+}
+
+.thumb-label {
+  margin-top: 4px;
+  font-size: 0.8rem;
+  user-select: none;
+}
+
+/* Instruction Bubble */
+.instruction-bubble {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  width: 200px;
+  background-color: #fff;
+  border: 2px solid #000;
+  border-radius: 12px;
+  padding: 8px;
+  font-size: 0.75rem;
+  line-height: 1.2;
+  user-select: none;
+}
+
+/* ------------- Bottom Gradient Bar ------------- */
+.file-footer {
+  height: 24px;
+  background: linear-gradient(135deg, #6f42c1, #ff6535); /* purple→orange */
+}
+
+/* ------------- Back Button (Bottom‐Left) ------------- */
+.back-button {
+  position: absolute;
+  bottom: 20px;
+  left: 40px;
+  background-color: #ff6535; /* orange */
+  color: #000;
+  border: 2px solid #000;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  box-shadow: 2px 2px 0 #000;
+}
+.back-button:hover {
+  background-color: #ff8a66;
+}
+
+/* ------------- Responsive Adjustment (Optional) ------------- */
+@media (max-width: 1200px) {
+  .file-viewer-window {
+    width: 90%;
+    left: 5%;
+  }
+  .projects-text-window {
+    width: 180px;
+    height: 180px;
+  }
+}

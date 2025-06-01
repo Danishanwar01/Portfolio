@@ -1,0 +1,364 @@
+/* src/components/Introduction.css */
+
+/* ---------------------  Reset + Global Font  -------------------------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Lucida Console", Monaco, monospace;
+}
+
+/* ---------------------  Full-Screen Container  ------------------------- */
+.intro-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  /* Replace with a background image or gradient as desired */
+  background: linear-gradient(135deg, #9c7bc9, #7a5ea6);
+  overflow: hidden;
+}
+
+/* ---------------------  Top Pink Bar + “Traffic Lights”  -------------- */
+.intro-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background-color: #ffb6c1; /* light pink */
+  display: flex;
+  align-items: center;
+  padding-left: 12px;
+}
+
+.circle {
+  width: 12px;
+  height: 12px;
+  background-color: #000; /* black circles */
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+/* ---------------------  Centered Hourglass  ---------------------------- */
+.hourglass {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 2rem;
+  transform: translate(-50%, -50%);
+  user-select: none;
+}
+
+/* ---------------------  Browser Window (“Hi, I’m Danish!”)  ------------ */
+.browser-window {
+  position: absolute;
+  top: 60px;
+  right: 500px;
+  width: 320px;
+  background-color: #fff;
+  border: 2px solid #000;
+  box-shadow: 4px 4px 0 #000;
+}
+
+.browser-titlebar {
+  height: 32px;
+  background-color: #ffb6c1;
+  border-bottom: 2px solid #000;
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+  position: relative;
+}
+
+.browser-tab {
+  background-color: #fff;
+  border: 1px solid #000;
+  border-bottom: none;
+  padding: 4px 12px;
+  font-size: 0.85rem;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.browser-add {
+  position: absolute;
+  right: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.browser-content {
+  padding: 20px;
+}
+
+.browser-heading {
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+/* ---------------------  Magic Pic Editor Window  ----------------------- */
+.editor-window {
+  position: absolute;
+  top: 140px;
+  left: 40px;
+  width: 520px;
+  background-color: #fff;
+  border: 2px solid #000;
+  box-shadow: 4px 4px 0 #000;
+  display: flex;
+  flex-direction: column;
+}
+
+.editor-titlebar {
+  height: 32px;
+  background-color: #ff6535; /* orange */
+  border-bottom: 2px solid #000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8px;
+  user-select: none;
+}
+
+.editor-name {
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.editor-controls {
+  display: flex;
+  gap: 6px;
+}
+
+.control-btn {
+  width: 16px;
+  height: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.editor-main {
+  display: flex;
+  flex: 1;
+  background-color: #e5e2e5;
+  margin-top: 5px;
+}
+
+/* ---- Left side of Magic Editor (Icon + Sliders) ---- */
+.editor-left {
+  flex: 1;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Diamond-in-circle icon */
+.magic-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #ff9d76, #ff6535);
+  border: 2px solid #000;
+  border-radius: 50%;
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.diamond {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  transform: translate(-50%, -50%) rotate(45deg);
+  border: 2px solid #000;
+}
+
+/* Slider styling */
+.slider-group {
+  width: 100%;
+}
+
+.slider-group label {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 0.85rem;
+}
+
+.slider-group input[type="range"] {
+  width: 100%;
+  margin-top: 4px;
+}
+
+/* ---- Right side of Magic Editor (Image + Zoom Icons) ---- */
+.editor-right {
+  flex: 1.5;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+}
+
+.editor-image {
+  max-width: 90%;
+  max-height: 90%;
+  border: 1px solid #000;
+}
+
+.image-zoom-icons {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.zoom-icon {
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* ---------------------  Brightness/Contrast Modal  ---------------------- */
+.bc-modal {
+  position: absolute;
+  top: 300px;
+  left: 200px;
+  width: 240px;
+  background-color: #fff;
+  border: 2px solid #000;
+  box-shadow: 4px 4px 0 #000;
+  display: flex;
+  flex-direction: column;
+}
+
+.bc-header {
+  background-color: #563d7c; /* purple */
+  color: #fff;
+  padding: 8px;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border-bottom: 2px solid #000;
+}
+
+.bc-content {
+  padding: 12px;
+}
+
+.bc-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.bc-row span {
+  font-size: 0.85rem;
+}
+
+.bc-row input[type="range"] {
+  flex: 1;
+  margin: 0 8px;
+}
+
+.bc-num {
+  width: 24px;
+  border: 1px solid #000;
+  background-color: #f0f0f0;
+  cursor: default;
+}
+
+.bc-buttons {
+  display: flex;
+  justify-content: space-around;
+  padding: 8px 0;
+  border-top: 2px solid #000;
+}
+
+.btn-ok,
+.btn-cancel {
+  width: 60px;
+  background-color: #563d7c;
+  color: #fff;
+  border: none;
+  padding: 4px;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+/* ---------------------  Document2 Window  ------------------------------ */
+.doc-window {
+  position: absolute;
+  top: 170px;
+  right: 250px;
+  width: 460px;
+  background-color: #fff;
+  border: 2px solid #000;
+  box-shadow: 4px 4px 0 #000;
+  display: flex;
+  flex-direction: column;
+}
+
+.doc-titlebar {
+  height: 28px;
+  background-color: #ffb6c1; /* light pink */
+  border-bottom: 2px solid #000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8px;
+  user-select: none;
+}
+
+.doc-name {
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+.doc-controls {
+  display: flex;
+  gap: 6px;
+}
+
+.doc-menu-bar {
+  height: 24px;
+  background-color: #f8f5f8;
+  border-bottom: 1px solid #000;
+  display: flex;
+  align-items: center;
+  padding-left: 8px;
+  gap: 8px;
+  font-size: 0.8rem;
+  user-select: none;
+}
+
+.doc-content {
+  padding: 12px;
+  font-size: 0.9rem;
+  line-height: 1.3;
+
+}
+
+/* ---------------------  Back Button (Bottom-Left)  ---------------------- */
+.back-button {
+  position: absolute;
+  bottom: 20px;
+  left: 40px;
+  background-color: #ff6535; /* orange */
+  color: #000;
+  border: 2px solid #000;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  box-shadow: 2px 2px 0 #000;
+}
+
+.back-button:hover {
+  background-color: #ff8a66;
+}

@@ -1,0 +1,117 @@
+/* — Reset + Font — */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Lucida Console", Monaco, monospace;
+}
+
+/* — Floating “Party Media Player” Window — */
+.social-media-window {
+  position: absolute;
+  top: 300px;    
+  right: 500px; 
+  width: 320px;
+  height: 240px;
+  background-color: #fff;
+  border: 2px solid #000;
+  box-shadow: 4px 4px 0 #000;
+  display: flex;
+  flex-direction: column;
+  z-index: 5;   /* ensure it floats above most other layers */
+}
+
+/* Title Bar */
+.sm-titlebar {
+  height: 28px;
+  background-color: #ffb6c1; /* light pink */
+  border-bottom: 2px solid #000;
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+  user-select: none;
+}
+.sm-nav-icon {
+  font-size: 1rem;
+  margin-right: 6px;
+  cursor: pointer;
+}
+.sm-tab {
+  flex: 1;
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: bold;
+  user-select: none;
+}
+.sm-controls {
+  display: flex;
+  gap: 6px;
+}
+.sm-btn {
+  width: 16px;
+  height: 16px;
+  background-color: #fff;
+  border: 1px solid #000;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+/* Content Area */
+.sm-content {
+  flex: 1;
+  padding: 12px;
+  font-size: 0.9rem;
+  text-align: center;
+}
+.sm-icons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 8px 0;
+}
+.icon {
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.sm-handle {
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
+
+/* Footer (Playback Controls) */
+.sm-footer {
+  height: 32px;
+  background-color: #fff;
+  border-top: 2px solid #000;
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+  user-select: none;
+}
+.sm-player-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.sm-player-btn {
+  font-size: 1rem;
+  cursor: pointer;
+}
+.sm-time {
+  font-size: 0.8rem;
+}
+.sm-volume {
+  width: 80px;
+  height: 8px;
+  background-color: #f3f0f3;
+  border: 1px solid #000;
+  position: relative;
+}
+.sm-vol-level {
+  width: 40%;
+  height: 100%;
+  background-color: #ff6535;
+}

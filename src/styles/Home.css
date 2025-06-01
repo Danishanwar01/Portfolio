@@ -1,0 +1,213 @@
+/* src/components/Home.css */
+
+/* --------------  Reset + Font  ----------------------------------------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Lucida Console", Monaco, monospace; /* retro pixel-ish look */
+}
+
+/* --------------  Desktop Container  ----------------------------------- */
+.desktop-container {
+  width: 100vw;
+  height: 100vh;
+  background-color: #f3f0f3;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --------------  Top Purple Title Bar (“Danish Anavar”)  ------------------ */
+.desktop-header {
+  height: 48px;
+  background-color: #6f42c1; /* purple */
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  color: white;
+  font-size: 1.25rem;
+  font-weight: bold;
+  user-select: none;
+}
+
+/* --------------  Wrapper for Two Windows  ------------------------------ */
+.windows-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  padding: 20px;
+  position: relative;
+}
+
+/* --------------  Common Window Styles  --------------------------------- */
+.window {
+  border: 2px solid #000;
+  background-color: #ffffff;
+  box-shadow: 4px 4px 0 #000;
+  width: 45%;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* --------------  Title Bar Variations  --------------------------------- */
+.window-titlebar {
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8px;
+  color: #000;
+  font-size: 0.9rem;
+  border-bottom: 2px solid #000;
+  user-select: none;
+}
+.window-titlebar--orange {
+  background-color: #ff6535; /* orange */
+}
+.window-titlebar--pink {
+  background-color: #ffb6c1; /* light pink */
+}
+
+/* --------------  Window “Filename” & Controls  -------------------------- */
+.window-filename {
+  font-weight: bold;
+}
+.window-controls {
+  display: flex;
+  gap: 6px;
+}
+.control-btn {
+  width: 16px;
+  height: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+/* --------------  Image Viewer Window Styles  --------------------------- */
+.image-window {
+  /* give it a fixed height so it looks like a small image viewer */
+  height: 350px;
+  margin-top: 20px;
+  position: relative;
+}
+
+.image-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e5e2e5;
+}
+
+.image-viewer-img {
+  max-width: 90%;
+  max-height: 90%;
+  border: 1px solid #000;
+}
+
+.image-toolbar {
+  height: 40px;
+  border-top: 2px solid #000;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  padding-left: 8px;
+  gap: 12px;
+  font-size: 1rem;
+  user-select: none;
+}
+
+/* --------------  TextEdit Window Styles  -------------------------------- */
+.text-window {
+  height: 500px;
+  margin-top: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.text-menu-bar {
+  height: 28px;
+  background-color: #f8f5f8;
+  border-bottom: 1px solid #000;
+  display: flex;
+  align-items: center;
+  padding-left: 12px;
+  gap: 16px;
+  font-size: 0.85rem;
+  user-select: none;
+}
+
+.menu-item {
+  cursor: default;
+}
+
+.text-content {
+  flex: 1;
+  overflow-y: auto;
+  background-color: transparent;
+}
+
+/* Scrollbar styling (WebKit browsers) */
+.text-content::-webkit-scrollbar {
+  width: 8px;
+}
+.text-content::-webkit-scrollbar-track {
+  background: #eee;
+}
+.text-content::-webkit-scrollbar-thumb {
+  background-color: #ff6f61; /* tomato-ish color */
+  border-radius: 4px;
+}
+
+/* --------------  Numbered Link List  ----------------------------------- */
+.link-list {
+  list-style: none;
+  margin: 0;
+  padding: 12px;
+}
+.link-list li {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #000;
+  padding: 8px 4px;
+}
+.link-index {
+  display: inline-block;
+  width: 40px;
+  background-color: #ff6535;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  margin-right: 12px;
+  border: 1px solid #000;
+  font-size: 0.9rem;
+}
+.link-text {
+  text-decoration: none;
+  color: #000;
+  font-size: 0.9rem;
+  flex: 1;
+  cursor: pointer;
+}
+.link-text:hover {
+  text-decoration: underline;
+}
+
+/* --------------  Make sure the two windows don’t overlap too much  ------ */
+@media (max-width: 900px) {
+  .windows-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+  .window {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+}
