@@ -18,7 +18,7 @@ export default function Background() {
           <span className="word-close">×</span>
         </div>
         <div className="word-content">
-          <h2 className="word-heading">Education</h2>
+          <h2 className="word-heading">Education & EXPERIENCE</h2>
         </div>
         <div className="word-footer">
           <span className="word-info">Page 1  |  Words: 88</span>
@@ -62,7 +62,7 @@ export default function Background() {
           <span className="star-icon">★</span>
           <span className="window-close">×</span>
         </div>
-        <div className="browser-section-label">EDUCATION & EXPERIENCE</div>
+        <div className="browser-section-label">EDUCATION </div>
         <div className="browser-content">
           <h3 className="edu-school">SHARDA UNIVERSITY</h3>
           <p className="edu-degree">B-Tech Computer Science [2019 – 2023]</p>
