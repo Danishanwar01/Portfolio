@@ -1,6 +1,7 @@
 // src/components/Contact.jsx
 import React from "react";
 import "../styles/Contact.css";
+import { FaGithub, FaInstagram, FaWhatsapp } from "react-icons/fa";
 import SocialMedia from "./SocialMedia";
 
 
@@ -52,13 +53,50 @@ export default function Contact() {
             <span className="nav-icon">{'<'}</span>
             <span className="nav-icon">{'>'}</span>
           </div>
-          <div className="browser-tab">New Tab</div>
+          <div className="browser-tab">Social media</div>
           <div className="browser-add">＋</div>
         </div>
-        <div className="browser-content">
-          <span className="browser-label">WEBSITE</span>
-          <p className="browser-info">www.reallygreatsite.com</p>
+       <div className="browser-content">
+      <div className="sm-content">
+        <p>To see more of my work,</p>
+        <p>visit my socials:</p>
+        <div className="sm-icons">
+          {/* GitHub */}
+          <a
+            href="https://github.com/Danishanwar01"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="icon"
+            aria-label="GitHub"
+          >
+            <FaGithub />
+          </a>
+
+          {/* Instagram */}
+          <a
+            href="https://www.instagram.com/danish_anwar_khan_07/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="icon"
+            aria-label="Instagram"
+          >
+            <FaInstagram />
+          </a>
+
+          {/* WhatsApp */}
+          <a
+            href="https://wa.me/6389616657" 
+           
+            target="_blank"
+            rel="noopener noreferrer"
+            className="icon"
+            aria-label="WhatsApp"
+          >
+            <FaWhatsapp />
+          </a>
         </div>
+      </div>
+    </div>
       </div>
 
       <div className="window browser-window email-window">
@@ -67,12 +105,12 @@ export default function Contact() {
             <span className="nav-icon">{'<'}</span>
             <span className="nav-icon">{'>'}</span>
           </div>
-          <div className="browser-tab">New Tab</div>
+          <div className="browser-tab">Email & Contact</div>
           <div className="browser-add">＋</div>
         </div>
         <div className="browser-content">
           <span className="browser-label">EMAIL</span>
-          <p className="browser-info">hello@reallygreatsite.com</p>
+          <p className="browser-info">danishkhan705010@gmail.com</p>
         </div>
       </div>
 
@@ -87,10 +125,10 @@ export default function Contact() {
         </div>
         <div className="browser-content">
           <span className="browser-label">PHONE</span>
-          <p className="browser-info">123-456-7890</p>
+          <p className="browser-info">+91 6389616657</p>
         </div>
       </div>
-<SocialMedia/>
+{/* <SocialMedia/> */}
      
     </div>
   );

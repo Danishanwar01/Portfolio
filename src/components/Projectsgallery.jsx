@@ -1,26 +1,69 @@
-// src/components/ProjectsGallery.jsx
 import React from "react";
+import { Link } from "react-router-dom";
 import "../styles/Projectsgallery.css";
 
-
-// import img1 from "../assets/img1.jpg";
-// import img2 from "../assets/img2.jpg";
-// import img3 from "../assets/img3.jpg";
-// import img4 from "../assets/img4.jpg";
-// import img5 from "../assets/img5.jpg";
-// import img6 from "../assets/img6.jpg";
+import img1 from "../images/crypto.jpg";
+import img2 from "../images/s1.jpg";
+import img3 from "../images/ecommerce2.jpg";
+import img4 from "../images/e1.jpg";
+import img5 from "../images/service2.jpg";
+import img6 from "../images/ecommerce5.jpg";
 
 export default function Projectsgallery() {
+  const projects = [
+    {
+      type: "img",
+      src: img1,
+      alt: "Crypto Project Screenshot",
+      title: "Crypto Wallet UI",
+      subtitle: "React + Node.js implementation",
+      link: "https://reliwell-finance-j6cg.vercel.app/",
+    },
+    {
+      type: "img",
+      src: img6,
+      alt: "E-Commerce Project 1",
+      title: "E-Commerce Platform",
+      subtitle: "MERN Stack with Backend Admin Panel + Order Tracking Via Backend Update",
+      link: "https://e-frontend-seven.vercel.app/", 
+    },
+    {
+      type: "img",
+      src: img5,
+      alt: "Serevice CodeQalb",
+      title: "IT Startup web",
+      subtitle: "Responsive Design With The Functionality They Rwquire ",
+      link: "https://code-qalb.vercel.app/", 
+    },
+    {
+      type: "img",
+      src: img4,
+      alt: "e-commerce",
+      title: "Shopping Web",
+      subtitle: "Dynamic Routing & Redux + Sagas ",
+      link: "https://danwar-eshop.vercel.app/", 
+    },
+  
+    {
+      type: "img",
+      src: img2,
+      alt: "Home Service Booking Web ",
+      title: "Home Service Booking Web",
+      subtitle: "Dual Authentication With Vendor Location Filter And Node.js + MongoDB Backend",
+      link: "https://service-app-frontend.vercel.app/", 
+    },
+  ];
+
   return (
     <div className="gallery-container">
-      {/* ---------------- Top Traffic Lights Bar ---------------- */}
+      {/* Top Traffic-Light Bar */}
       <div className="top-bar">
         <div className="light"></div>
         <div className="light"></div>
         <div className="light"></div>
       </div>
 
-      {/* ---------------- Photo Gallery Window ---------------- */}
+      {/* Photo Gallery “Window” */}
       <div className="photo-window">
         {/* Title Bar */}
         <div className="photo-titlebar">
@@ -29,118 +72,43 @@ export default function Projectsgallery() {
             <div className="circle circle--white"></div>
             <div className="circle circle--white"></div>
           </div>
-          <div className="title-text">Photo Gallery</div>
+          <div className="title-text">Projects Photo Gallery</div>
           <div className="titlebar-right">
-            <span className="ctrl-btn">▢</span>
-            <span className="ctrl-btn">❐</span>
-            <span className="ctrl-btn">✕</span>
+            <button className="ctrl-btn" aria-label="Maximize">▢</button>
+            <button className="ctrl-btn" aria-label="Restore">❐</button>
+            <button className="ctrl-btn" aria-label="Close">✕</button>
           </div>
         </div>
 
-        {/* Toolbar Row */}
-        <div className="photo-toolbar">
-          <div className="toolbar-icons-left">
-            <span className="toolbar-btn">☷</span>
-            <span className="toolbar-btn">☰</span>
-            <span className="toolbar-btn">☲</span>
-            <span className="toolbar-btn">★</span>
-          </div>
-          <div className="toolbar-icons-right">
-            <span className="toolbar-btn">☁️</span>
-            <div className="search-wrapper">
-              <span className="search-icon">🔍</span>
-              <input
-                type="text"
-                className="search-input"
-                placeholder="Search"
-              />
-            </div>
-          </div>
-        </div>
+      
 
-        {/* Content Grid */}
+        {/* Responsive Grid Content */}
         <div className="photo-content">
-          <div className="grid-item large-item">
-            <div className="white-card">
-              <div className="project-title">Campaign for</div>
-              <div className="project-subtitle">Skin Calm and Co.</div>
-              <div className="project-dates">| July – August 2019</div>
-            </div>
-          </div>
-          <div className="grid-item medium-item">
-            {/* <img src={img1} alt="img1" /> */}
-          </div>
-          <div className="grid-item medium-item">
-            {/* <img src={img2} alt="img2" /> */}
-          </div>
-          <div className="grid-item medium-item">
-            {/* <img src={img3} alt="img3" /> */}
-          </div>
-          <div className="grid-item medium-item">
-            {/* <img src={img4} alt="img4" /> */}
-          </div>
-          <div className="grid-item large-item">
-            {/* <img src={img5} alt="img5" /> */}
-          </div>
-          <div className="grid-item large-item">
-            {/* <img src={img6} alt="img6" /> */}
-          </div>
-        </div>
-      </div>
-
-      {/* ---------------- Vertical Scrollbar Stub ---------------- */}
-      <div className="scrollbar-vertical"></div>
-
-      {/* ---------------- Hourglass Cursor ---------------- */}
-      <div className="hourglass-icon">⌛</div>
-
-      {/* ---------------- Brush Settings Panel ---------------- */}
-      <div className="brush-panel">
-        <div className="brush-header">
-          <div className="brush-draggable"></div>
-          <span className="brush-close">✕</span>
-        </div>
-        <div className="brush-content">
-          <div className="slider-row">
-            <label className="slider-label">Size</label>
-            <input
-              type="range"
-              min="0"
-              max="100"
-              defaultValue="60"
-              className="slider"
-            />
-            <span className="slider-value">60 px</span>
-          </div>
-          <div className="slider-row">
-            <label className="slider-label">Hardness</label>
-            <input
-              type="range"
-              min="0"
-              max="100"
-              defaultValue="100"
-              className="slider"
-            />
-            <span className="slider-value">100 %</span>
-          </div>
-          <div className="brush-shapes">
-            {/** Nine brush‐shape icons */}
-            <div className="shape-row">
-              <div className="shape shape--circle-small"></div>
-              <div className="shape shape--circle-medium"></div>
-              <div className="shape shape--circle-large"></div>
-            </div>
-            <div className="shape-row">
-              <div className="shape shape--soft-small"></div>
-              <div className="shape shape--soft-medium"></div>
-              <div className="shape shape--soft-large"></div>
-            </div>
-            <div className="shape-row">
-              <div className="shape shape--square-small"></div>
-              <div className="shape shape--square-medium"></div>
-              <div className="shape shape--square-large"></div>
-            </div>
-          </div>
+          {projects.map((proj, idx) => {
+            return (
+              <div key={idx} className="grid-item grid-item--image">
+                <div className="image-container">
+                  <img src={proj.src} alt={proj.alt} />
+                </div>
+                <div className="image-caption">
+                  <div className="img-title">{proj.title}</div>
+                  <div className="img-subtitle">{proj.subtitle}</div>
+                  {/* 
+                    If you're linking to an external website, use <a> with target="_blank" 
+                    If you prefer using React Router for internal navigation, swap <a> for <Link> 
+                  */}
+                  <a
+                    href={proj.link}
+                    className="img-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Visit Site
+                  </a>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>

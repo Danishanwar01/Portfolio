@@ -42,7 +42,7 @@ export default function Projects() {
       <div className="file-viewer-window">
         {/* Title Bar (Gradient Purple→Orange) */}
         <div className="file-titlebar">
-          <span className="file-title">File Viewer</span>
+          <span className="file-title">Projects In My showcase</span>
           <div className="file-controls">
             <span className="control-btn">—</span>
             <span className="control-btn">☐</span>
@@ -56,7 +56,7 @@ export default function Projects() {
           <span className="nav-btn">{'>'}</span>
           <span className="nav-btn">⭯</span>
           <select className="path-select" value="My PC &gt; Documents &gt; Photos">
-            <option>My PC &gt; Documents &gt; Photos</option>
+            <option>My PC &gt; Documents &gt; My projects</option>
           </select>
           <span className="reload-btn">⟳</span>
           <input
@@ -95,39 +95,33 @@ export default function Projects() {
 
           {/* Middle: Thumbnail Grid */}
           <div className="thumb-container">
-            <div className="thumb-grid">
-              <div className="thumb-item">
-                {/* <img src={img001} alt="img001" /> */}
-                <span className="thumb-label">img001</span>
-              </div>
-              <div className="thumb-item">
-                {/* <img src={img002} alt="img002" /> */}
-                <span className="thumb-label">img002</span>
-              </div>
-              <div className="thumb-item">
-                {/* <img src={img003} alt="img003" /> */}
-                <span className="thumb-label">img003</span>
-              </div>
-              <div className="thumb-item">
-                {/* <img src={img004} alt="img004" /> */}
-                <span className="thumb-label">img004</span>
-              </div>
-              <div className="thumb-item">
-                {/* <img src={img005} alt="img005" /> */}
-                <span className="thumb-label">img005</span>
-              </div>
-              <div className="thumb-item">
-                {/* <img src={img006} alt="img006" /> */}
-                <span className="thumb-label">img006</span>
-              </div>
-            </div>
+            <ul className="thumb-grid">
+              <li className="thumb-item">
+               <h5>E-Commerce with Backend Admin Page</h5>
+              </li>
+              <li className="thumb-item">
+              <h5>News-Web With Backend Admin Page</h5>
+              </li>
+              <li className="thumb-item">
+              <h5>Service Booking Web + Vendor Registration Web </h5>
+              </li>
+              <li className="thumb-item">
+              <h5>Crypto Wallet UI</h5>
+              </li>
+              <li className="thumb-item">
+               <h5>Service Base Websites</h5>
+              </li>
+              <li className="thumb-item">
+               
+              </li>
+            </ul>
 
             {/* Instruction Bubble */}
-            <div className="instruction-bubble">
+            {/* <div className="instruction-bubble">
               Drag and drop your photo or video! Click the sample photo or video
               and delete. Select yours from the uploads tab, drag and then drop
               inside the frame!
-            </div>
+            </div> */}
           </div>
         </div>
 

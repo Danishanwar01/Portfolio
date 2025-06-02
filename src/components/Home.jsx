@@ -8,7 +8,7 @@ import Projects from "./Projects";
 import Projectsgallery from "./Projectsgallery";
 
 import Contact from "./Contact";
-// import PlaceholderImage from "../assets/placeholder.jpg"; 
+import PlaceholderImage from "../images/i1.jpg"; 
 
 
 export default function Home() {
@@ -17,7 +17,7 @@ export default function Home() {
     <div className="desktop-container">
       {/* Top purple title bar */}
       <div className="desktop-header">
-        <span className="desktop-title">Danish Anavar</span>
+        <span className="desktop-title">Danish Anwar</span>
       
       </div>
 
@@ -35,7 +35,7 @@ export default function Home() {
           </div>
           <div className="window-content image-content">
             <img
-            //   src={PlaceholderImage}
+              src={PlaceholderImage}
               alt="placeholder"
               className="image-viewer-img"
             />
@@ -83,7 +83,7 @@ export default function Home() {
               </li>
               <li>
                 <span className="link-index">03</span>
-                <Link to="/my-projects" className="link-text">
+                <Link to="/projects-gallery" className="link-text">
                   My Projects
                 </Link>
               </li>
@@ -112,7 +112,7 @@ export default function Home() {
     </div>
     <Introduction/>
     <Background/>
-    <Projects/>
+    {/* <Projects/> */}
     <Projectsgallery/>
     
     <Contact/>

@@ -39,6 +39,7 @@ export default function Introduction() {
         </div>
         <div className="editor-main">
           <p>Hello! I’m Danish Anwar, a MERN-stack developer currently pursuing a B.Tech in Computer Science. Over the past three years, I’ve built responsive, full-stack applications using MongoDB, Express, React, and Node.js, turning designs into dynamic, user-friendly interfaces and solid back-end services. Beyond coding, I’m an avid cricketer—having represented my college in cricket and competed in three state-level school tournaments. I thrive on balancing technical challenges with teamwork, both on the field and in collaborative projects.</p>
+
         </div>
       </div>
 

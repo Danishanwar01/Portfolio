@@ -90,11 +90,16 @@
 }
 
 /* --------------  Image Viewer Window Styles  --------------------------- */
+/* ...rest of your CSS above... */
+
 .image-window {
-  /* give it a fixed height so it looks like a small image viewer */
-  height: 350px;
+  /* Remove the fixed height */
+  /* height: 350px; */
   margin-top: 20px;
   position: relative;
+  max-height: 100vh;       /* optional cap */
+  display: flex;
+  flex-direction: column;
 }
 
 .image-content {
@@ -103,13 +108,20 @@
   align-items: center;
   justify-content: center;
   background-color: #e5e2e5;
+  padding: 8px;
+  overflow: hidden;
 }
 
 .image-viewer-img {
-  max-width: 90%;
-  max-height: 90%;
+  width: 100%;
+  height: auto;
+  max-height: 100%;
+  object-fit: contain;
   border: 1px solid #000;
 }
+
+
+
 
 .image-toolbar {
   height: 40px;
