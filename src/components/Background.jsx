@@ -62,7 +62,7 @@ export default function Background() {
           <span className="star-icon">★</span>
           <span className="window-close">×</span>
         </div>
-        <div className="browser-section-label">EDUCATION</div>
+        <div className="browser-section-label">EDUCATION & EXPERIENCE</div>
         <div className="browser-content">
           <h3 className="edu-school">SHARDA UNIVERSITY</h3>
           <p className="edu-degree">B-Tech Computer Science [2019 – 2023]</p>
