@@ -22,7 +22,7 @@ export default function Contact() {
       {/* ---------- 3) “Your ideas and dreams…” Window (Behind) ---------- */}
       <div className="window ideas-window">
         <div className="ideas-content">
-          <p>Your ideas and dreams deserve to be seen.</p>
+          <p style={{marginTop:'40px'}}>Your ideas and dreams deserve to be seen.</p>
           <p>Let’s design them.</p>
           <h2 style={{marginTop:'10px'}}>Work With Me</h2>
         </div>

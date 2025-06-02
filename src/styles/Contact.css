@@ -1,5 +1,5 @@
 /* ================================================
-   Contact.css  (UPDATED)
+   Contact.css  (UPDATED for Mobile Responsiveness)
    ================================================ */
 
 /* — Reset + Retro Monospace — */
@@ -16,7 +16,7 @@
   width: 100vw;
   height: 100vh;
   background-color: #f3f0f3;
-  overflow: hidden;
+  overflow: auto; /* allow vertical scroll on mobile */
 }
 
 /* — 1) Top Purple Title Bar (“Traffic Lights”) — */
@@ -31,7 +31,7 @@
   align-items: center;
   padding-left: 12px;
   user-select: none;
-  /* This bar sits at the very top and does not need a z-index */
+  z-index: 10;
 }
 
 .circle {
@@ -47,9 +47,10 @@
    ==================================================================== */
 .ideas-window {
   position: absolute;
-  top: 48px;   /* directy under the purple header */
+  top: 48px;   /* directly under the purple header */
   left: 40px;
-  width: 640px;
+  width: 80%;  /* changed from fixed 640px */
+  max-width: 640px;
   height: 240px;
   background-color: #fff;
   border: 2px solid #000;
@@ -105,9 +106,10 @@
    ==================================================================== */
 .work-window {
   position: absolute;
-  top: 48px;   /* same top as ideas-window, but narrower width */
+  top: 48px;   /* same top as ideas-window */
   left: 40px;
-  width: 480px;
+  width: 75%;  /* changed from fixed 480px */
+  max-width: 480px;
   height: 120px;
   background-color: #e2dbf0; /* light lavender */
   border: 2px solid #000;
@@ -159,18 +161,14 @@
 }
 
 /* ====================================================================
-   4) Blank Window (Placeholder / Editor Shell) — Below Work, but above ideas
+   4) Blank Window (Placeholder / Editor Shell)
    ==================================================================== */
-/* If you have a blank “shell” window (like the empty pink titlebar + white body),
-   give it its own class (e.g. `.blank-window`). If you used `.window` with no subclass,
-   you can simply give `.window` a default z-index:2 — but we’ll assume you added a
-   special class name (here shown as `.blank-window`). */
-
 .blank-window {
   position: absolute;
-  top: 160px;    /* adjust as needed so it does not physically overlap “work-window” */
+  top: 160px;    /* adjust so it doesn’t overlap “work-window” */
   left: 40px;
-  width: 480px;
+  width: 75%;    /* changed from 480px */
+  max-width: 480px;
   height: 240px;
   background-color: #fff;
   border: 2px solid #000;
@@ -180,10 +178,6 @@
   z-index: 2;    /* sits above ideas-window (1) but under work-window (3) */
 }
 
-/* If you do not have a `.blank-window` selector in your JSX, simply apply
-   `z-index: 2;` to whichever generic `.window` or element you used to create
-   that placeholder. */
-
 /* ====================================================================
    5) Media Player Window (Right-Top)
    ==================================================================== */
@@ -191,7 +185,8 @@
   position: absolute;
   top: 56px;    /* just under the purple header */
   right: 40px;
-  width: 320px;
+  width: 60%;   /* from fixed 320px */
+  max-width: 320px;
   height: 240px;
   background-color: #fff;
   border: 2px solid #000;
@@ -289,16 +284,17 @@
    ==================================================================== */
 .brush-preview-window {
   position: absolute;
-  bottom: 48px;   /* push it up so it doesn’t overlap the phone-window below */
+  bottom: 48px;   /* push it up so it doesn’t overlap phone-window */
   right: 40px;
-  width: 200px;
+  width: 40%;     /* from fixed 200px */
+  max-width: 200px;
   height: 200px;
   background-color: #fff;
   border: 2px solid #000;
   box-shadow: 4px 4px 0 #000;
   display: flex;
   flex-direction: column;
-  z-index: 6;     /* the HIGHEST layer so it floats on top of media-window */
+  z-index: 6;     /* the HIGHEST layer so it floats on top */
 }
 
 .brush-preview-window .window-titlebar {
@@ -325,14 +321,15 @@
   position: absolute;
   bottom: 48px;  /* just above the bottom edge */
   left: 40px;
-  width: 320px;
+  width: 60%;    /* from fixed 320px */
+  max-width: 320px;
   height: 240px;
   background-color: #fff;
   border: 2px solid #000;
   box-shadow: 4px 4px 0 #000;
   display: flex;
   flex-direction: column;
-  z-index: 4;    /* floats above ideas(1)/blank(2)/work(3) but under brush-preview(6) */
+  z-index: 4;    /* above ideas/window but under brush-preview */
 }
 
 .editor-titlebar {
@@ -366,7 +363,8 @@
 /* Common browser-window styles */
 .browser-window {
   position: absolute;
-  width: 360px;
+  width: 75%;   /* changed from 360px */
+  max-width: 360px;
   height: 100px;
   background-color: #fff;
   border: 2px solid #000;
@@ -392,11 +390,6 @@
   display: flex;
   align-items: center;
   gap: 6px;
-}
-
-.nav-icon {
-  font-size: 1rem;
-  cursor: pointer;
 }
 
 .browser-tab {
@@ -464,4 +457,89 @@
 }
 .back-button:hover {
   background-color: #ff8a66;
+}
+
+/* ====================================================================
+   10) MEDIA QUERY FOR MOBILE (max-width: 768px)
+   ==================================================================== */
+@media (max-width: 768px) {
+  /* Allow container to grow beyond 100vh on mobile */
+  .contact-container {
+    height: auto;
+    padding-bottom: 40px; /* some bottom space to scroll */
+  }
+
+  /* Shrink all “windows” to 90% width and center them */
+  .ideas-window,
+  .work-window,
+  .blank-window,
+  .media-window,
+  .brush-preview-window,
+  .editor-window,
+  .browser-window {
+    position: static;
+       /* flow in document order */
+    margin: 16px auto;    /* separate them vertically */
+    width: 90%;
+    max-width: none;      /* allow full 90% */
+    height: auto;         /* let content determine height (unless we want to fix) */
+    box-shadow: 2px 2px 0 #000; /* reduce shadow size */
+  }
+
+  /* Reduce font sizes slightly */
+  .ideas-content p {
+    font-size: 1rem;
+  }
+  .ideas-content h2 {
+    font-size: 1.2rem;
+  }
+  .work-content h1 {
+    font-size: 1.1rem;
+  }
+  .browser-content p,
+  .browser-label,
+  .browser-info {
+    font-size: 0.8rem;
+  }
+  .social-icons .icon {
+    font-size: 1.5rem;
+  }
+
+  /* Collapse the “traffic lights” header to a slightly smaller height */
+  .contact-header {
+    height: 32px;
+    padding-left: 8px;
+  }
+  .circle {
+    width: 10px;
+    height: 10px;
+    margin-right: 6px;
+  }
+
+  /* Adjust titlebars inside windows */
+  .browser-titlebar,
+  .media-titlebar,
+  .editor-titlebar,
+  .brush-preview-window .window-titlebar,
+  .work-window .window-titlebar {
+    height: 24px;
+    padding: 0 6px;
+  }
+  .browser-tab,
+  .media-name {
+    font-size: 0.8rem;
+  }
+
+  /* Stack browser windows in a single column */
+  .website-window,
+  .email-window,
+  .phone-window {
+    margin-top: 8px;
+  }
+
+  /* Simplify “Back to Agenda Page” button */
+  .back-button {
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }

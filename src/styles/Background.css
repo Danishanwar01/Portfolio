@@ -1,6 +1,3 @@
-
-/* src/styles/Background.css */
-
 /* ------------- Reset + Monospace Font ------------- */
 * {
   margin: 0;
@@ -9,13 +6,14 @@
   font-family: "Lucida Console", Monaco, monospace;
 }
 
-/* ------------- Full‐Viewport Container ------------- */
+/* ------------- Full-Viewport Container ------------- */
 .background-container {
   position: relative;
   width: 100vw;
   height: 100vh;
   background-color: #ffb6c1; /* pastel pink */
   overflow-x: hidden;
+  overflow-y: auto; /* allow vertical scroll on mobile */
 }
 
 /* ------------- Top Purple Bar (“Traffic Lights”) ------------- */
@@ -29,6 +27,7 @@
   display: flex;
   align-items: center;
   padding-left: 12px;
+  z-index: 10;
 }
 
 .circle {
@@ -42,7 +41,7 @@
 /* ------------- Word Window ------------- */
 .word-window {
   position: absolute;
-  margin-top: 50px;
+  top: 50px;   /* place just under the header */
   left: 20px;
   width: 300px;
   height: 120px;
@@ -63,6 +62,7 @@
   padding-right: 8px;
   user-select: none;
 }
+
 .word-close {
   font-size: 1rem;
   cursor: pointer;
@@ -76,6 +76,7 @@
   background: linear-gradient(135deg, #ff9d76, #ff6535);
   color: #000;
 }
+
 .word-heading {
   font-size: 1.25rem;
   font-weight: bold;
@@ -92,15 +93,16 @@
   font-size: 0.75rem;
   user-select: none;
 }
+
 .word-info {
   color: #000;
 }
 
-/* ------------- Browser‐Style Windows ------------- */
+/* ------------- Browser-Style Windows ------------- */
 .browser-window {
   position: absolute;
   width: 260px;
-  min-height: 160px; /* increased height to fit content */
+  min-height: 160px; /* ensure enough height for content */
   background-color: #fff;
   border: 2px solid #000;
   box-shadow: 4px 4px 0 #000;
@@ -119,6 +121,7 @@
   position: relative;
   user-select: none;
 }
+
 .nav-btn,
 .globe-icon,
 .star-icon,
@@ -127,6 +130,7 @@
   margin-right: 6px;
   cursor: pointer;
 }
+
 .browser-url {
   flex: 1;
   height: 16px;
@@ -160,6 +164,7 @@
   font-weight: bold;
   margin-bottom: 4px;
 }
+
 .exp-role,
 .edu-degree {
   font-size: 0.85rem;
@@ -167,27 +172,32 @@
 
 /* ------------- Default Positions for Larger Screens ------------- */
 .exp-window {
-  margin-top: 60px;
+  top: 60px;
   left: 35%;
   transform: translateX(-50%);
 }
+
 .edu-window {
-  margin-top: 60px;
+  top: 60px;
   left: 85%;
   transform: translateX(-50%);
 }
+
 .school-window {
-  margin-top: 150px;
+  top: 150px;
   left: 60%;
   transform: translateX(-50%);
 }
 
 /* ------------- Responsive Adjustments ------------- */
+
+/* —— Tablet / small-desktop (up to 1024px) —— */
 @media (max-width: 1024px) {
   .exp-window,
   .edu-window,
   .school-window {
     width: 220px;
+    box-shadow: 3px 3px 0 #000;
   }
   .exp-window {
     top: 150px;
@@ -206,64 +216,117 @@
   }
 }
 
+/* —— Large mobile / small tablet (up to 768px) —— */
 @media (max-width: 768px) {
+  /* 1) Stack .word-window at the top, center it */
   .word-window {
-    width: 240px;
-    left: 10px;
+    position: static;
+    width: 75%;
+    max-width: 240px;
+    margin: 16px auto 0;
+    box-shadow: 3px 3px 0 #000;
+    transform: none;
   }
   .word-heading {
     font-size: 1rem;
   }
+  .word-footer {
+    font-size: 0.7rem;
+  }
+
+  /* 2) Make all three browser windows flow in document order and center */
   .exp-window,
   .edu-window,
   .school-window {
-    width: 200px;
+    position: static;     /* remove absolute positioning */
+    width: 80%;
+    max-width: 240px;
+    margin: 16px auto;    /* vertical spacing + center */
+    box-shadow: 3px 3px 0 #000;
+    transform: none;      /* clear any translate */
   }
-  .exp-window {
-    top: 140px;
-    left: 50%;
-    transform: translateX(-50%);
+
+  /* 3) Adjust titlebar & text sizes for mobile */
+  .browser-titlebar,
+  .word-titlebar {
+    height: 24px;
+    padding: 0 6px;
   }
-  .edu-window {
-    top: 300px;
-    left: 50%;
-    transform: translateX(-50%);
+  .nav-btn,
+  .globe-icon,
+  .star-icon,
+  .window-close {
+    font-size: 0.9rem;
+    margin-right: 4px;
   }
-  .school-window {
-    top: 450px;
-    left: 50%;
-    transform: translateX(-50%);
+  .browser-url {
+    font-size: 0.7rem;
+    height: 14px;
+  }
+  .browser-section-label {
+    height: 20px;
+    font-size: 0.7rem;
+  }
+  .exp-company,
+  .edu-school {
+    font-size: 0.9rem;
+  }
+  .exp-role,
+  .edu-degree {
+    font-size: 0.8rem;
   }
 }
 
+/* —— Small mobile (up to 480px) —— */
 @media (max-width: 480px) {
+  /* Further shrink .word-window */
   .word-window {
-    width: 180px;
-    height: 100px;
-    left: 10px;
-    top: 40px;
+    width: 70%;
+    max-width: 180px;
+    margin: 12px auto 0;
+    box-shadow: 2px 2px 0 #000;
   }
   .word-heading {
     font-size: 0.9rem;
   }
+  .word-footer {
+    font-size: 0.65rem;
+  }
+
+  /* Even smaller browser windows */
   .exp-window,
   .edu-window,
   .school-window {
-    width: 160px;
+    width: 75%;
+    max-width: 180px;
+    margin: 12px auto;
+    box-shadow: 2px 2px 0 #000;
   }
-  .exp-window {
-    top: 130px;
-    left: 50%;
-    transform: translateX(-50%);
+  .browser-titlebar {
+    height: 22px;
+    padding: 0 4px;
   }
-  .edu-window {
-    top: 260px;
-    left: 50%;
-    transform: translateX(-50%);
+  .nav-btn,
+  .globe-icon,
+  .star-icon,
+  .window-close {
+    font-size: 0.8rem;
+    margin-right: 3px;
   }
-  .school-window {
-    top: 380px;
-    left: 50%;
-    transform: translateX(-50%);
+  .browser-url {
+    font-size: 0.65rem;
+    height: 12px;
+  }
+  .browser-section-label {
+    height: 18px;
+    font-size: 0.65rem;
+  }
+  .exp-company,
+  .edu-school {
+    font-size: 0.85rem;
+  }
+  .exp-role,
+  .edu-degree {
+    font-size: 0.75rem;
   }
 }
