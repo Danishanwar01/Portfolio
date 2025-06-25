@@ -8,6 +8,7 @@ import img3 from "../images/ecommerce2.jpg";
 import img4 from "../images/e1.jpg";
 import img5 from "../images/service2.jpg";
 import img6 from "../images/ecommerce5.jpg";
+import img7 from "../images/crypto1.jpg";
 
 export default function Projectsgallery() {
   const projects = [
@@ -51,6 +52,14 @@ export default function Projectsgallery() {
       title: "Home Service Booking Web",
       subtitle: "Dual Authentication With Vendor Location Filter And Node.js + MongoDB Backend",
       link: "https://service-app-frontend.vercel.app/", 
+    },
+       {
+      type: "img",
+      src: img7,
+      alt: "Crypto Project Screenshot",
+      title: "Crypto Wallet UI",
+      subtitle: "React + Node.js implementation",
+      link: "https://corpus-git-main-danishanwar01s-projects.vercel.app/",
     },
   ];
 
