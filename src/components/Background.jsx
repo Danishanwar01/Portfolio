@@ -65,7 +65,7 @@ export default function Background() {
         <div className="browser-section-label">EDUCATION </div>
         <div className="browser-content">
           <h3 className="edu-school">IGNOU</h3>
-          <p className="edu-degree">BSC Pursuing</p>
+          <p className="edu-degree">BCA Pursuing</p>
         </div>
       </div>
 
