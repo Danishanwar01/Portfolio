@@ -43,7 +43,7 @@ export default function Background() {
         <div className="browser-section-label">EXPERIENCE</div>
         <div className="browser-content">
           <h3 className="exp-company">ReliWell Technologies Pvt Ltd</h3>
-          <p className="exp-role">Lead Web-Developer</p>
+          <p className="exp-role">Intern Web-Developer</p>
         </div>
       </div>
 
